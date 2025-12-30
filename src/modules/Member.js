@@ -6,7 +6,7 @@ export class Member extends User {
   }
 
   borrowBook() {
-
+    
   }
 
   returnBook() {
