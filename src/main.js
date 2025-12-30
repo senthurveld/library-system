@@ -28,6 +28,7 @@ userSwitcher.addEventListener("change", (e) => {
 
   renderBooks();
   renderBorrowed();
+  bookInAdmin();
 });
 
 bookForm.addEventListener("submit", (e) => {
@@ -123,14 +124,20 @@ borrowedList.addEventListener("click", (e) => {
       console.log("return");
     }
   }
-      renderBooks();
-    renderBorrowed();
-
+  renderBooks();
+  renderBorrowed();
 });
 
-
+function bookInAdmin() {
+  const li = localStorage.getItem("borrowedItems");
+  if (currentUser.getRole() === "Admin") {
+    library.getAllBooks(li)
+  }
+  renderBooks.innerHTML = `${library.getAllBooks(li)}`;
+}
 
 // Initial Rendering
 bookSection.style.display = "none";
 renderBooks();
 renderBorrowed();
+bookInAdmin();
