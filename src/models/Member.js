@@ -17,8 +17,12 @@ export class Member extends User {
     localStorage.setItem("borrowedBooks", JSON.stringify(borrowed));
   }
 
-  returnBook(bookId) {
-    // TODO: Implement This. It is your task.
+  returnBook(book) {
+      const returnBook = borrowedMap.get(this);
+      returnBook.pop(book);
+     //  borrowed.push(book);
+     //  book.isAvailable = true;
+      localStorage.setItem("returnedBooks", JSON.stringify(returnBook));
   }
 
   getBorrowedBooks() {

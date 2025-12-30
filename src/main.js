@@ -112,6 +112,24 @@ bookList.addEventListener("click", (e) => {
   }
 });
 
+borrowedList.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    const id = e.target.getAttribute("data-id");
+    const action = e.target.getAttribute("data-action");
+    const book = library.getBookById(id);
+
+    if (action === "return" && currentUser.getRole() === "Member") {
+      currentUser.returnBook(book);
+      console.log("return");
+    }
+  }
+      renderBooks();
+    renderBorrowed();
+
+});
+
+
+
 // Initial Rendering
 bookSection.style.display = "none";
 renderBooks();
