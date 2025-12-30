@@ -1,5 +1,3 @@
-import { Book } from "../modules/Book.js";
-
 export class LibrarySystem {
   #books;
 
@@ -11,7 +9,7 @@ export class LibrarySystem {
     this.#books.push(book);
   }
 
-  getAvailableBook() {
+  getAvailableBooks() {
     return this.#books.filter((book) => book.isAvailable);
   }
 
@@ -20,6 +18,6 @@ export class LibrarySystem {
   }
 
   getBookById(id) {
-    return this.#books.find(b => b.id === id)
+    return this.#books.find((b) => b.id === id);
   }
 }

@@ -4,55 +4,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>Library Management System</title>
   <link href="/src/index.css" rel="stylesheet" />
   <script defer type="module" src="/src/main.js"></script>
 </head>
 
 <body class="bg-gray-100 p-6">
   <div class="max-w-4xl mx-auto space-y-6">
-    <h1 class="text-2xl font-bold text-center">Library Management System</h1>
+    <h1 class="text-3xl font-bold text-center">Library Management System</h1>
 
-    <!-- userSwitcher -->
-
+    <!-- User Switcher -->
     <div class="flex flex-col xl:flex-row">
-      <label for="userSwitcher" class="block font-semibold xl:mx-2">Choose Portal:</label>
+      <label for="userSwitcher" class="block font-semibold xl:mx-2">Choose User View:</label>
       <select class="border p-2 rounded" id="userSwitcher">
-        <option value="member">Member Portal</option>
-        <option value="admin">Admin Portal</option>
+        <option value="member">Member View</option>
+        <option value="admin">Admin View</option>
       </select>
     </div>
 
-    <!-- Book entry form -->
-    <section id="bookSection" class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-xl font-semibold ">Add a New Book</h2>
+    <!-- Book Entry Form -->
+
+    <section id="bookSection" class="bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4">Add a New Book</h2>
       <form id="bookForm" class="space-y-4">
         <div>
-          <label for="title" class="block font-semibold">Title:</label>
-          <input type="text" id="title" name="title" class="border p-2 rounded w-full" required />
+          <label class="block font-medium" for="title">Title</label>
+          <input type="text" id="title" required class="w-full p-2 border rounded" />
         </div>
         <div>
-          <label for="author" class="block font-semibold">Author:</label>
-          <input type="text" id="author" name="author" class="border p-2 rounded w-full" required />
+          <label class="block font-medium" for="author">Author</label>
+          <input type="text" id="author" required class="w-full p-2 border rounded" />
         </div>
         <div>
-          <label for="genre" class="block font-semibold">Genre:</label>
-          <input type="text" id="genre" name="genre" class="border p-2 rounded w-full" required />
+          <label class="block font-medium" for="genre">Genre</label>
+          <input type="text" id="genre" required class="w-full p-2 border rounded" />
         </div>
-        <button id="" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">Add Book</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
+          Add Book
+        </button>
+      </form>
     </section>
 
-    <!-- Available Books List -->
-    <section id="availableBooks" class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-xl font-semibold">Available Books</h2>
-      <ul id="bookList" class="list-disc pl-5 space-y-2"></ul>
+    <!-- Available Books -->
+
+    <section id="availableSection" class="bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4">Available Books</h2>
+      <ul id="bookList" class="space-y-2"></ul>
     </section>
 
-    <!-- Borrowed Books List -->
-    <section id="borrowedBooks" class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-xl font-semibold">Borrowed Books</h2>
-      <ul id="borrowedBookList" class="list-disc pl-5 space-y-2"></ul>
+    <!-- Borrowed Books -->
+
+    <section id="borrowedSection" class="bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4">Borrowed Books</h2>
+      <ul id="borrowedList" class="space-y-2"></ul>
     </section>
+
   </div>
 </body>
 
